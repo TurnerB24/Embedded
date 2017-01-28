@@ -20,6 +20,7 @@
           </logicalFolder>
         </logicalFolder>
         <itemPath>../src/appMS1.h</itemPath>
+        <itemPath>../src/appms1_public.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f1" displayName="framework" projectFiles="true">
         <logicalFolder name="f1" displayName="gfx" projectFiles="true">

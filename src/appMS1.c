@@ -77,7 +77,6 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 */
 
 APPMS1_DATA appms1Data;
-
 // *****************************************************************************
 // *****************************************************************************
 // Section: Application Callback Functions
@@ -117,10 +116,8 @@ void APPMS1_Initialize ( void )
     /* Place the App state machine in its initial state. */
     appms1Data.state = APPMS1_STATE_INIT;
     
-    xQueueCreate(1, 4);
-    /* TODO: Initialize your application's state machine and other
-     * parameters.
-     */
+    appms1Data.int_queue_handle = xQueueCreate(1, sizeof(int)); //creates a queue that holds one integer
+    
 }
 
 
@@ -154,7 +151,7 @@ void APPMS1_Tasks ( void )
 
         case APPMS1_STATE_SERVICE_TASKS:
         {
-        
+            APPMS1_serviceTasks();
             break;
         }
 
@@ -170,7 +167,14 @@ void APPMS1_Tasks ( void )
     }
 }
 
- 
+void APPMS1_serviceTasks(){
+    int* recv;
+    xQueueReceive(appms1Data.int_queue_handle, recv, portMAX_DELAY);
+    
+    //do stuff
+    
+}
+
 
 /*******************************************************************************
  End of File

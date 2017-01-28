@@ -113,6 +113,7 @@ typedef struct
 {
     /* The application's current state */
     APPMS1_STATES state;
+    QueueHandle_t int_queue_handle;
 
     /* TODO: Define any additional data used by the application. */
 
