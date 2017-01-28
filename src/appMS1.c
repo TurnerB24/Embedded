@@ -116,8 +116,8 @@ void APPMS1_Initialize ( void )
 {
     /* Place the App state machine in its initial state. */
     appms1Data.state = APPMS1_STATE_INIT;
-
     
+    xQueueCreate(1, 4);
     /* TODO: Initialize your application's state machine and other
      * parameters.
      */
