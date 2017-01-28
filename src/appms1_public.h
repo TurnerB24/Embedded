@@ -89,7 +89,7 @@ extern "C" {
             return 3;
         }
      */
-    void appms1_send_int_to_queue(int param1);
+    void appms1_send_int_to_queue(int* param1);
 
 
     /* Provide C++ Compatibility */

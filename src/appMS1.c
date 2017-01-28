@@ -168,13 +168,19 @@ void APPMS1_Tasks ( void )
 }
 
 void APPMS1_serviceTasks(){
-    int* recv;
-    xQueueReceive(appms1Data.int_queue_handle, recv, portMAX_DELAY);
+    int recv;
+    xQueueReceive(appms1Data.int_queue_handle, &recv, portMAX_DELAY);
     
     //do stuff
+    //--------
+    //output to UART and to 8-bit I/O for logic analyzer
     
 }
 
+void appms1_send_int_to_queue(int* param1){ //blocking
+    xQueueSend(appms1Data.int_queue_handle, param1, portMAX_DELAY);
+    return;
+}
 
 /*******************************************************************************
  End of File

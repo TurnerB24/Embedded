@@ -126,4 +126,6 @@ build/default/production/_ext/1688732426/system_interrupt.o:  \
  ../../../../../../../../microchip/harmony/v1_09/third_party/rtos/FreeRTOS/Source/include/task.h  \
  ../../../../../../../../microchip/harmony/v1_09/third_party/rtos/FreeRTOS/Source/include/list.h  \
  ../../../../../../../../microchip/harmony/v1_09/third_party/rtos/FreeRTOS/Source/include/queue.h  \
+ ../src/appms1_public.h  \
+../src/appMS1.h  \
  ../src/system_config/default/system_definitions.h 

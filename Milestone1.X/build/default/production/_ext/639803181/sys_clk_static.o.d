@@ -125,4 +125,6 @@ build/default/production/_ext/639803181/sys_clk_static.o:  \
  ../../../../../../../../microchip/harmony/v1_09/third_party/rtos/FreeRTOS/Source/include/task.h  \
  ../../../../../../../../microchip/harmony/v1_09/third_party/rtos/FreeRTOS/Source/include/list.h  \
  ../src/appms1.h  \
- ../../../../../../../../microchip/harmony/v1_09/third_party/rtos/FreeRTOS/Source/include/queue.h 
+ ../../../../../../../../microchip/harmony/v1_09/third_party/rtos/FreeRTOS/Source/include/queue.h  \
+ ../src/appms1_public.h  \
+../src/appMS1.h 
