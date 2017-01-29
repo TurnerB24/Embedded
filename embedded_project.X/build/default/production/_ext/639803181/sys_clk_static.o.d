@@ -247,4 +247,6 @@ build/default/production/_ext/639803181/sys_clk_static.o:  \
  ../../../../third_party/rtos/FreeRTOS/Source/include/mpu_wrappers.h  \
  ../../../../third_party/rtos/FreeRTOS/Source/include/task.h  \
  ../../../../third_party/rtos/FreeRTOS/Source/include/list.h  \
- ../src/appms1.h 
+ ../src/appms1.h  \
+ ../../../../third_party/rtos/FreeRTOS/Source/include/queue.h  \
+ ../src/debug.h 

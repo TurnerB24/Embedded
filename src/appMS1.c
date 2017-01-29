@@ -77,7 +77,6 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 */
 
 APPMS1_DATA appms1Data;
-
 // *****************************************************************************
 // *****************************************************************************
 // Section: Application Callback Functions
@@ -116,11 +115,9 @@ void APPMS1_Initialize ( void )
 {
     /* Place the App state machine in its initial state. */
     appms1Data.state = APPMS1_STATE_INIT;
-
     
-    /* TODO: Initialize your application's state machine and other
-     * parameters.
-     */
+    appms1Data.val_queue_handle = xQueueCreate(1, sizeof(appms1qtype)); //creates a queue that holds one item
+    
 }
 
 
@@ -134,7 +131,11 @@ void APPMS1_Initialize ( void )
 
 void APPMS1_Tasks ( void )
 {
-
+    while(1){
+        APPMS1_serviceTasks();
+    }
+#if 0   //ignore state machine for now 
+    
     /* Check the application's current state. */
     switch ( appms1Data.state )
     {
@@ -154,7 +155,7 @@ void APPMS1_Tasks ( void )
 
         case APPMS1_STATE_SERVICE_TASKS:
         {
-        
+            APPMS1_serviceTasks();
             break;
         }
 
@@ -168,9 +169,30 @@ void APPMS1_Tasks ( void )
             break;
         }
     }
+#endif
 }
 
- 
+void APPMS1_serviceTasks(){
+    appms1qtype recv;
+    xQueueReceive(appms1Data.val_queue_handle, &recv, portMAX_DELAY);
+    
+    //do stuff
+    //--------
+    //output to UART and to 8-bit I/O for logic analyzer
+    
+    dbgOutputVal(recv); //to I/O lines
+    dbgUARTVal(recv);   //to UART (duh)
+    
+}
+
+void appms1_send_val_to_queue_block(appms1qtype* param1){ //blocks if queue is full
+    xQueueSend(appms1Data.val_queue_handle, param1, portMAX_DELAY);
+    return;
+}
+
+BaseType_t appms1_send_val_to_queue_noblock(appms1qtype* param1){ //returns error if queue is full
+    return xQueueSendFromISR(appms1Data.val_queue_handle, param1, NULL);
+ }
 
 /*******************************************************************************
  End of File

@@ -19,8 +19,8 @@
             <itemPath>../src/system_config/default/system_definitions.h</itemPath>
           </logicalFolder>
         </logicalFolder>
-        <itemPath>../../../../../../../Users/user/Documents/Repositories/Embedded/src/appms1_public.h</itemPath>
         <itemPath>../src/appMS1.h</itemPath>
+        <itemPath>../src/appms1_public.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f1" displayName="framework" projectFiles="true">
         <logicalFolder name="f1" displayName="driver" projectFiles="true">

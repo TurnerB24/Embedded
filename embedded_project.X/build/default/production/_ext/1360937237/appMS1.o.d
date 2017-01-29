@@ -248,4 +248,6 @@ build/default/production/_ext/1360937237/appMS1.o:  \
  ../../../../third_party/rtos/FreeRTOS/Source/include/mpu_wrappers.h  \
  ../../../../third_party/rtos/FreeRTOS/Source/include/task.h  \
  ../../../../third_party/rtos/FreeRTOS/Source/include/list.h  \
- ../src/appms1.h 
+ ../src/appms1.h  \
+ ../../../../third_party/rtos/FreeRTOS/Source/include/queue.h  \
+ ../src/debug.h 

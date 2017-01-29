@@ -250,4 +250,6 @@ build/default/production/_ext/1688732426/system_exceptions.o:  \
  ../../../../third_party/rtos/FreeRTOS/Source/include/list.h  \
  ../src/appms1.h  \
 ../src/system_config/default/system_definitions.h  \
- ../../../../framework/system/debug/sys_debug.h 
+ ../../../../third_party/rtos/FreeRTOS/Source/include/queue.h  \
+ ../src/debug.h  \
+../../../../framework/system/debug/sys_debug.h 

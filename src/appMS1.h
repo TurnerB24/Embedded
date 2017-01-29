@@ -58,7 +58,9 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 #include <stdlib.h>
 #include "system_config.h"
 #include "system_definitions.h"
-
+#include "queue.h"
+#include "debug.h"
+//#include "appms1_public.h"
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
 
@@ -84,6 +86,7 @@ extern "C" {
     determine the behavior of the application at various times.
 */
 
+typedef char appms1qtype;    
 typedef enum
 {
 	/* Application's state machine's initial state. */
@@ -112,6 +115,7 @@ typedef struct
 {
     /* The application's current state */
     APPMS1_STATES state;
+    QueueHandle_t val_queue_handle;
 
     /* TODO: Define any additional data used by the application. */
 
@@ -198,6 +202,7 @@ void APPMS1_Initialize ( void );
 
 void APPMS1_Tasks( void );
 
+void APPMS1_serviceTasks();
 
 #endif /* _APPMS1_H */
 

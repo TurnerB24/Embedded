@@ -249,11 +249,12 @@ build/default/production/_ext/185269848/drv_tmr.o:  \
  ../../../../third_party/rtos/FreeRTOS/Source/include/task.h  \
  ../../../../third_party/rtos/FreeRTOS/Source/include/list.h  \
  ../src/appms1.h  \
+ ../../../../third_party/rtos/FreeRTOS/Source/include/queue.h  \
+ ../src/debug.h  \
  ../../../../framework/driver/tmr/src/drv_tmr_variant_mapping.h  \
  ../../../../framework/osal/osal.h  \
  ../../../../framework/osal/osal_definitions.h  \
  ../../../../framework/osal/src/osal_freertos.h  \
- ../../../../third_party/rtos/FreeRTOS/Source/include/queue.h  \
  ../../../../third_party/rtos/FreeRTOS/Source/include/semphr.h  \
  ../../../../third_party/rtos/FreeRTOS/Source/include/queue.h  \
  ../../../../framework/driver/tmr/drv_tmr_compatibility.h 
