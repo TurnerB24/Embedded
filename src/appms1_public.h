@@ -89,8 +89,8 @@ extern "C" {
             return 3;
         }
      */
-    void appms1_send_int_to_queue_blocking(appms1qtype* param1);
-    BaseType_t appms1_send_int_to_queue_noblock(appms1qtype* param1);
+    void appms1_send_val_to_queue_block(appms1qtype* param1);
+    BaseType_t appms1_send_val_to_queue_noblock(appms1qtype* param1);
 
 
     /* Provide C++ Compatibility */

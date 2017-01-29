@@ -116,7 +116,7 @@ void APPMS1_Initialize ( void )
     /* Place the App state machine in its initial state. */
     appms1Data.state = APPMS1_STATE_INIT;
     
-    appms1Data.val_queue_handle = xQueueCreate(1, sizeof(appms1qtype)); //creates a queue that holds one integer
+    appms1Data.val_queue_handle = xQueueCreate(1, sizeof(appms1qtype)); //creates a queue that holds one item
     
 }
 
@@ -185,7 +185,7 @@ void APPMS1_serviceTasks(){
     
 }
 
-void appms1_send_val_to_queue_blocking(appms1qtype* param1){ //blocks if queue is full
+void appms1_send_val_to_queue_block(appms1qtype* param1){ //blocks if queue is full
     xQueueSend(appms1Data.val_queue_handle, param1, portMAX_DELAY);
     return;
 }
