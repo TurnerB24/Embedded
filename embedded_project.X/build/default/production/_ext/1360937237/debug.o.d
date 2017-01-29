@@ -1,10 +1,10 @@
-build/default/production/_ext/1360937237/main.o:  \
-../src/main.c  \
- ../../../../framework/system/common/sys_module.h  \
- ../../../../framework/system/common/sys_common.h  \
-../src/debug.h  \
- ../src/system_config/default/system_config.h  \
+build/default/production/_ext/1360937237/debug.o:  \
+../src/debug.c  \
+ ../src/debug.h  \
+../src/system_config/default/system_config.h  \
  ../src/system_config/default/system_definitions.h  \
+ ../../../../framework/system/common/sys_common.h  \
+ ../../../../framework/system/common/sys_module.h  \
  ../../../../framework/system/clk/sys_clk.h  \
  ../../../../framework/peripheral/osc/plib_osc.h  \
  ../../../../framework/peripheral/osc/processor/osc_processor.h  \

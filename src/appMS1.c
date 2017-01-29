@@ -54,7 +54,6 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 // *****************************************************************************
 
 #include "appms1.h"
-
 // *****************************************************************************
 // *****************************************************************************
 // Section: Global Data Definitions
@@ -131,6 +130,8 @@ void APPMS1_Initialize ( void )
 
 void APPMS1_Tasks ( void )
 {
+    dbgOutputLoc(DLOC_TASK_ENTER);
+    dbgOutputLoc(DLOC_TASK_BEFORE_WHILE);
     while(1){
         APPMS1_serviceTasks();
     }
@@ -173,9 +174,10 @@ void APPMS1_Tasks ( void )
 }
 
 void APPMS1_serviceTasks(){
+    
     appms1qtype recv;
     xQueueReceive(appms1Data.val_queue_handle, &recv, portMAX_DELAY);
-    
+    dbgOutputLoc(DLOC_TASK_AFTER_QRECIEVE);
     //do stuff
     //--------
     //output to UART and to 8-bit I/O for logic analyzer

@@ -1,11 +1,11 @@
-build/default/production/_ext/1360937237/main.o:  \
-../src/main.c  \
- ../../../../framework/system/common/sys_module.h  \
- ../../../../framework/system/common/sys_common.h  \
-../src/debug.h  \
+build/default/debug/_ext/1688732426/system_tasks.o:  \
+ ../src/system_config/default/system_tasks.c  \
  ../src/system_config/default/system_config.h  \
  ../src/system_config/default/system_definitions.h  \
+ ../../../../framework/system/common/sys_common.h  \
+ ../../../../framework/system/common/sys_module.h  \
  ../../../../framework/system/clk/sys_clk.h  \
+ ../src/system_config/default/system_config.h  \
  ../../../../framework/peripheral/osc/plib_osc.h  \
  ../../../../framework/peripheral/osc/processor/osc_processor.h  \
  ../../../../framework/peripheral/osc/processor/osc_p32xxxx.h  \
@@ -250,4 +250,6 @@ build/default/production/_ext/1360937237/main.o:  \
  ../../../../third_party/rtos/FreeRTOS/Source/include/task.h  \
  ../../../../third_party/rtos/FreeRTOS/Source/include/list.h  \
  ../src/appms1.h  \
- ../../../../third_party/rtos/FreeRTOS/Source/include/queue.h 
+../src/system_config/default/system_definitions.h  \
+ ../../../../third_party/rtos/FreeRTOS/Source/include/queue.h  \
+ ../src/debug.h 

@@ -1,97 +1,143 @@
-/* ************************************************************************** */
-/** Descriptive File Name
-
-  @Company
- UR MOM (C)
-
-  @File Name
+/*******************************************************************************
+  MPLAB Harmony Application Header File
+  Company:
+    Microchip Technology Inc.
+  File Name:
     debug.h
+  Summary:
+    This header file provides prototypes and definitions for the application.
+  Description:
+    This header file provides function prototypes and data type definitions for
+    the application.  Some of these are required by the system (such as the
+    "APP_Initialize" and "APP_Tasks" prototypes) and some of them are only used
+    internally by the application (such as the "APP_STATES" definition).  Both
+    are defined here for convenience.
+*******************************************************************************/
 
-  @Summary
- * Declares constants for debugging via logic analyzer
+//DOM-IGNORE-BEGIN
+/*******************************************************************************
+Copyright (c) 2013-2014 released Microchip Technology Inc.  All rights reserved.
+Microchip licenses to you the right to use, modify, copy and distribute
+Software only when embedded on a Microchip microcontroller or digital signal
+controller that is integrated into your product or third party product
+(pursuant to the sublicense terms in the accompanying license agreement).
+You should refer to the license agreement accompanying this Software for
+additional information regarding your rights and obligations.
+SOFTWARE AND DOCUMENTATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND,
+EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF
+MERCHANTABILITY, TITLE, NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE.
+IN NO EVENT SHALL MICROCHIP OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER
+CONTRACT, NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR
+OTHER LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE OR
+CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT OF
+SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+(INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+ *******************************************************************************/
+//DOM-IGNORE-END
 
-  @Description
-    Describe the purpose of this file.
- */
-/* ************************************************************************** */
-
-#ifndef _DEBUG_H    /* Guard against multiple inclusion */
+#ifndef _DEBUG_H
 #define _DEBUG_H
 
+// *****************************************************************************
+// *****************************************************************************
+// Section: Included Files
+// *****************************************************************************
+// *****************************************************************************
 
-/* Provide C++ Compatibility */
-#ifdef __cplusplus
+#include <stdint.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdlib.h>
+#include "system_config.h"
+#include "system_definitions.h"
+
+// DOM-IGNORE-BEGIN
+#ifdef __cplusplus  // Provide C++ Compatibility
+
 extern "C" {
+
 #endif
+// DOM-IGNORE-END 
+    
+// *****************************************************************************
+// *****************************************************************************
+// Section: Global Data Definitions
+// *****************************************************************************
+// *****************************************************************************
 
+// Unique constant values pushed to GPIO pins 30-37 through the dbgOutputLoc()
+// function. 
 
+#define DLOC_ERROR -1
+    
+// Task debugging values
+#define DLOC_TASK_ENTER 1
+#define DLOC_TASK_BEFORE_WHILE 2
+#define DLOC_TASK_BEFORE_QSEND 3
+#define DLOC_TASK_AFTER_QRECIEVE 4
  
-    // *****************************************************************************
-    // *****************************************************************************
-    // Section: Interface Functions
-    // *****************************************************************************
-    // *****************************************************************************
-
-    /*  A brief description of a section can be given directly below the section
-        banner.
-     */
-
-    // *****************************************************************************
-    /**
-      @Function
-        int ExampleFunctionName ( int param1, int param2 ) 
-
-      @Summary
-        Brief one-line description of the function.
-
-      @Description
-        Full description, explaining the purpose and usage of the function.
-        <p>
-        Additional description in consecutive paragraphs separated by HTML 
-        paragraph breaks, as necessary.
-        <p>
-        Type "JavaDoc" in the "How Do I?" IDE toolbar for more information on tags.
-
-      @Precondition
-        List and describe any required preconditions. If there are no preconditions,
-        enter "None."
-
-      @Parameters
-        @param param1 Describe the first parameter to the function.
+// ISR debugging values
+#define DLOC_ISR_ENTER 5
+#define DLOC_ISR_EXIT 6
+#define DLOC_ISR_BEFORE_QSEND 7
+#define DLOC_ISR_AFTER_QRECIEVE 8
     
-        @param param2 Describe the second parameter to the function.
+// *****************************************************************************
+// *****************************************************************************
+// Section: Type Definitions
+// *****************************************************************************
+// *****************************************************************************
 
-      @Returns
-        List (if feasible) and describe the return values of the function.
-        <ul>
-          <li>1   Indicates an error occurred
-          <li>0   Indicates an error did not occur
-        </ul>
 
-      @Remarks
-        Describe any special behavior not described above.
-        <p>
-        Any additional remarks.
-
-      @Example
-        @code
-        if(ExampleFunctionName(1, 2) == 0)
-        {
-            return 3;
-        }
-     */
-    void dbgOutputVal(unsigned char outVal);
-    void dbgUARTVal(unsigned char outVal);
+// *****************************************************************************
+// *****************************************************************************
+// Section: Application Callback Routines
+// *****************************************************************************
+// *****************************************************************************
+/* These routines are called by drivers when certain events occur.
+*/
+	
+// *****************************************************************************
+// *****************************************************************************
+// Section: Application Initialization and State Machine Functions
+// *****************************************************************************
+// ***************************************************************************** 
     
-    void dbgOutputLoc(unsigned char outVal); //define unique constants for this one
-    
-    /* Provide C++ Compatibility */
+/*******************************************************************************
+  Function:
+    void dbgOutputVal( unsigned char outVal )
+  Remarks:
+    Function that puts an 8-bit value on GPIO pins 46 to 53 on J8
+ */ 
+void dbgOutputVal(unsigned char outVal);
+
+/*******************************************************************************
+  Function:
+    void dbgUARTVal( unsigned char outVal )
+  Remarks:
+    Function that sends an 8-bit value on XXXXXXXXXXXXXX
+ */ 
+void dbgUARTVal(unsigned char outVal);
+
+/*******************************************************************************
+  Function:
+    void dbgOutputLoc( unsigned char outVal )
+  Remarks:
+    Method that sets GPIO pins 30-37, Port E 0-7, to an 8 bit value
+ */ 
+void dbgOutputLoc(unsigned char outVal);
+
+//DOM-IGNORE-BEGIN
 #ifdef __cplusplus
 }
 #endif
+//DOM-IGNORE-END
 
 #endif /* _DEBUG_H */
 
-/* *****************************************************************************
+
+
+/*******************************************************************************
  End of File
  */

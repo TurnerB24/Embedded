@@ -1,10 +1,9 @@
-build/default/production/_ext/1360937237/main.o:  \
-../src/main.c  \
- ../../../../framework/system/common/sys_module.h  \
- ../../../../framework/system/common/sys_common.h  \
-../src/debug.h  \
+build/default/debug/_ext/639803181/sys_clk_static.o:  \
+ ../src/system_config/default/framework/system/clk/src/sys_clk_static.c  \
  ../src/system_config/default/system_config.h  \
  ../src/system_config/default/system_definitions.h  \
+ ../../../../framework/system/common/sys_common.h  \
+ ../../../../framework/system/common/sys_module.h  \
  ../../../../framework/system/clk/sys_clk.h  \
  ../../../../framework/peripheral/osc/plib_osc.h  \
  ../../../../framework/peripheral/osc/processor/osc_processor.h  \
@@ -250,4 +249,5 @@ build/default/production/_ext/1360937237/main.o:  \
  ../../../../third_party/rtos/FreeRTOS/Source/include/task.h  \
  ../../../../third_party/rtos/FreeRTOS/Source/include/list.h  \
  ../src/appms1.h  \
- ../../../../third_party/rtos/FreeRTOS/Source/include/queue.h 
+ ../../../../third_party/rtos/FreeRTOS/Source/include/queue.h  \
+ ../src/debug.h 

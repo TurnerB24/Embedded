@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <configuration version="1.0.10.0">
-  <DisplayManager>
-    <SystemInitScript/>
-    <SystemStartScript/>
-  </DisplayManager>
   <General>
     <HarmonyPath path="../.."/>
     <Processor name=""/>
     <ForceOptimization flag="true"/>
-    <MergeStrategy flag="USER_ALL"/>
+    <MergeStrategy flag="USER_RECENT"/>
   </General>
   <Manifest>
     <Files>
@@ -17,16 +13,8 @@
         <Path>Header Files/FreeRTOS/portable/MPLAB/PIC32MX</Path>
       </File>
       <File>
-        <Name>drv_tmr_mapping.h</Name>
-        <Path>Header Files/framework/driver/tmr</Path>
-      </File>
-      <File>
         <Name>semphr.h</Name>
         <Path>Header Files/FreeRTOS</Path>
-      </File>
-      <File>
-        <Name>driver_common.h</Name>
-        <Path>Header Files/framework/driver</Path>
       </File>
       <File>
         <Name>queue.h</Name>
@@ -37,10 +25,6 @@
         <Path>Header Files/FreeRTOS/portable/MPLAB/PIC32MX</Path>
       </File>
       <File>
-        <Name>drv_usart_byte_model.c</Name>
-        <Path>Source Files/framework/driver/usart/src/dynamic</Path>
-      </File>
-      <File>
         <Name>croutine.c</Name>
         <Path>Source Files/FreeRTOS</Path>
       </File>
@@ -49,16 +33,20 @@
         <Path>Source Files/FreeRTOS/portable/MPLAB/PIC32MX</Path>
       </File>
       <File>
+        <Name>bsp_config.h</Name>
+        <Path>Header Files/bsp/pic32mx_usb_sk2</Path>
+      </File>
+      <File>
         <Name>mpu_prototypes.h</Name>
         <Path>Header Files/FreeRTOS</Path>
       </File>
       <File>
-        <Name>list.h</Name>
-        <Path>Header Files/FreeRTOS</Path>
+        <Name>bsp_sys_init.c</Name>
+        <Path>Source Files/bsp/pic32mx_usb_sk2</Path>
       </File>
       <File>
-        <Name>driver.h</Name>
-        <Path>Header Files/framework/driver</Path>
+        <Name>list.h</Name>
+        <Path>Header Files/FreeRTOS</Path>
       </File>
       <File>
         <Name>peripheral_common.h</Name>
@@ -89,10 +77,6 @@
         <Path>Header Files/framework/system</Path>
       </File>
       <File>
-        <Name>drv_usart.h</Name>
-        <Path>Header Files/framework/driver/usart</Path>
-      </File>
-      <File>
         <Name>timers.h</Name>
         <Path>Header Files/FreeRTOS</Path>
       </File>
@@ -121,16 +105,8 @@
         <Path>Header Files/framework/peripheral</Path>
       </File>
       <File>
-        <Name>drv_tmr_variant_mapping.h</Name>
-        <Path>Header Files/framework/driver/tmr/src</Path>
-      </File>
-      <File>
         <Name>list.c</Name>
         <Path>Source Files/FreeRTOS</Path>
-      </File>
-      <File>
-        <Name>drv_tmr.h</Name>
-        <Path>Header Files/framework/driver/tmr</Path>
       </File>
       <File>
         <Name>sys_devcon.c</Name>
@@ -143,10 +119,6 @@
       <File>
         <Name>StackMacros.h</Name>
         <Path>Header Files/FreeRTOS</Path>
-      </File>
-      <File>
-        <Name>drv_usart_local.h</Name>
-        <Path>Header Files/framework/driver/usart/src</Path>
       </File>
       <File>
         <Name>osal_freertos.c</Name>
@@ -167,10 +139,6 @@
       <File>
         <Name>portable.h</Name>
         <Path>Header Files/FreeRTOS</Path>
-      </File>
-      <File>
-        <Name>drv_usart.c</Name>
-        <Path>Source Files/framework/driver/usart/src/dynamic</Path>
       </File>
       <File>
         <Name>croutine.h</Name>
@@ -225,10 +193,6 @@
         <Path>Header Files/framework/system/debug</Path>
       </File>
       <File>
-        <Name>drv_usart_variant_mapping.h</Name>
-        <Path>Header Files/framework/driver/usart/src</Path>
-      </File>
-      <File>
         <Name>sys_module.h</Name>
         <Path>Header Files/framework/system/common</Path>
       </File>
@@ -265,12 +229,12 @@
       <Template>
         <Name>sys_ports_static.c</Name>
         <Path>Source Files/app/system_config/default/framework/system/ports/src</Path>
-        <Checksum>C61B926A7AC823250A40C878C9CD51F9</Checksum>
+        <Checksum>71FE10BFB6CD07CD196C6F0CE010E003</Checksum>
       </Template>
       <Template>
         <Name>system_init.c</Name>
         <Path>Source Files/app/system_config/default</Path>
-        <Checksum>122E1343D759357507A391224B298836</Checksum>
+        <Checksum>9117C3D229D7D5847F335C230D419626</Checksum>
       </Template>
       <Template>
         <Name>main.c</Name>
@@ -280,22 +244,12 @@
       <Template>
         <Name>system_interrupt_a.S</Name>
         <Path>Source Files/app/system_config/default</Path>
-        <Checksum>208C38F4220EB3D701B5B9CC9CB6A378</Checksum>
-      </Template>
-      <Template>
-        <Name>drv_tmr_static.h</Name>
-        <Path>Header Files/app/system_config/default/framework/driver/tmr</Path>
-        <Checksum>5B1227C9C8A50A58EB2DAB66BF09B4E6</Checksum>
-      </Template>
-      <Template>
-        <Name>drv_tmr_mapping.c</Name>
-        <Path>Source Files/app/system_config/default/framework/driver/tmr/src</Path>
-        <Checksum>0651845480D5D3E21D8BF17EE68DBEAC</Checksum>
+        <Checksum>F8E29721D7D91213A568F3DC060408EC</Checksum>
       </Template>
       <Template>
         <Name>system_definitions.h</Name>
         <Path>Header Files/app/system_config/default</Path>
-        <Checksum>2FDE9F43458CB6FBB2CE7DFFB45D9402</Checksum>
+        <Checksum>DBC0AFBAC325C311EAD1F48F20906574</Checksum>
       </Template>
       <Template>
         <Name>system_exceptions.c</Name>
@@ -321,29 +275,24 @@
       <Template>
         <Name>appMS1.c</Name>
         <Path>Source Files/app</Path>
-        <Checksum>D176913E43A9850C773F7D8586BA4015</Checksum>
+        <Checksum>B55B0836E54B70846D7F2B65A7EB9D4B</Checksum>
         <ProjectFileChecksum>850E12B5CD6F3D5E50907D513AEE0039</ProjectFileChecksum>
       </Template>
       <Template>
         <Name>system_config.h</Name>
         <Path>Header Files/app/system_config/default</Path>
-        <Checksum>A2D0211A2BF8524F1FD71B528A700ED4</Checksum>
-      </Template>
-      <Template>
-        <Name>drv_tmr_static.c</Name>
-        <Path>Source Files/app/system_config/default/framework/driver/tmr/src</Path>
-        <Checksum>E6D04381E5A072B508AF1277CCAE6BF3</Checksum>
+        <Checksum>84E08710730D9D676A96534787459FB5</Checksum>
       </Template>
       <Template>
         <Name>sys_clk_static.h</Name>
         <Path>Header Files/app/system_config/default/framework/system/clk</Path>
         <Checksum>B4BD59D8D7C4DA95DC5E3B57755FD352</Checksum>
-        <ProjectFileChecksum>584077BE314FB970BCEA8345CD8CD186</ProjectFileChecksum>
       </Template>
       <Template>
         <Name>system_interrupt.c</Name>
         <Path>Source Files/app/system_config/default</Path>
-        <Checksum>62D804800BE782BE64C36D964B366A89</Checksum>
+        <Checksum>DF16BCB6F6DD1473C0389821A6BD870D</Checksum>
+        <ProjectFileChecksum>C3DFBDD192D3556704FD49795061942D</ProjectFileChecksum>
       </Template>
       <Template>
         <Name>rtos_hooks.c</Name>
@@ -354,7 +303,6 @@
         <Name>sys_clk_static.c</Name>
         <Path>Source Files/app/system_config/default/framework/system/clk/src</Path>
         <Checksum>E8C935BED4628875A8C3428DDD07355C</Checksum>
-        <ProjectFileChecksum>EF8499F6CA5ADAB2F15B86D4EF308D1E</ProjectFileChecksum>
       </Template>
     </Templates>
     <CompilerItems>
@@ -369,6 +317,7 @@
         <Include value="C:\microchip\harmony\v1_09\apps\embedded_project\firmware\src\default"/>
         <Include value="C:\microchip\harmony\v1_09\framework"/>
         <Include value="C:\microchip\harmony\v1_09\apps\embedded_project\firmware\src\system_config\default\framework"/>
+        <Include value="../../../../bsp/pic32mx_usb_sk2"/>
         <Include value="../../../../third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MX"/>
         <Include value="../../../../third_party/rtos/FreeRTOS/Source/include"/>
         <Include value="../src/system_config/default"/>
@@ -379,4 +328,8 @@
       <Library value="../../../../bin/framework/peripheral/PIC32MX795F512L_peripherals.a"/>
     </Libraries>
   </Manifest>
+  <DisplayManager>
+    <SystemInitScript/>
+    <SystemStartScript/>
+  </DisplayManager>
 </configuration>

@@ -1,9 +1,7 @@
-build/default/production/_ext/1264926591/sys_tmr.o:  \
- ../../../../framework/system/tmr/src/sys_tmr.c  \
- ../../../../framework/system/tmr/src/sys_tmr_local.h  \
- ../src/system_config/default/system_config.h  \
- ../../../../framework/system/tmr/sys_tmr.h  \
+build/default/debug/_ext/1407244131/drv_tmr_mapping.o:  \
+ ../src/system_config/default/framework/driver/tmr/src/drv_tmr_mapping.c  \
  ../../../../framework/driver/tmr/drv_tmr.h  \
+ ../src/system_config/default/system_config.h  \
  ../../../../framework/driver/driver_common.h  \
  ../../../../framework/peripheral/tmr/plib_tmr.h  \
  ../../../../framework/peripheral/tmr/processor/tmr_processor.h  \
@@ -114,18 +112,4 @@ build/default/production/_ext/1264926591/sys_tmr.o:  \
  ../../../../framework/peripheral/osc/processor/../templates/osc_ResetPLL_Unsupported.h  \
  ../../../../framework/peripheral/osc/processor/../templates/osc_PLLBypass_Unsupported.h  \
  ../../../../framework/peripheral/osc/processor/../templates/osc_BTPLLClockOut_Unsupported.h  \
- ../../../../framework/osal/osal.h  \
- ../../../../framework/osal/osal_definitions.h  \
- ../../../../framework/osal/src/osal_freertos.h  \
- ../../../../third_party/rtos/FreeRTOS/Source/include/FreeRTOS.h  \
- ../src/system_config/default/FreeRTOSConfig.h  \
- ../../../../third_party/rtos/FreeRTOS/Source/include/projdefs.h  \
- ../../../../third_party/rtos/FreeRTOS/Source/include/portable.h  \
- ../../../../third_party/rtos/FreeRTOS/Source/include/deprecated_definitions.h  \
- ../../../../third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MX/portmacro.h  \
- ../../../../third_party/rtos/FreeRTOS/Source/include/mpu_wrappers.h  \
- ../../../../third_party/rtos/FreeRTOS/Source/include/queue.h  \
- ../../../../third_party/rtos/FreeRTOS/Source/include/semphr.h  \
- ../../../../third_party/rtos/FreeRTOS/Source/include/queue.h  \
- ../../../../third_party/rtos/FreeRTOS/Source/include/task.h  \
- ../../../../third_party/rtos/FreeRTOS/Source/include/list.h 
+ ../src/system_config/default/framework/driver/tmr/drv_tmr_static.h 
