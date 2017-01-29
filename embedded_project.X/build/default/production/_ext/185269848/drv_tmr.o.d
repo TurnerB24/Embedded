@@ -87,6 +87,7 @@ build/default/production/_ext/185269848/drv_tmr.o:  \
  ../../../../framework/peripheral/int/processor/../templates/int_VariableOffset_Unsupported.h  \
  ../../../../framework/peripheral/int/processor/../templates/int_SoftwareNMI_Unsupported.h  \
  ../../../../framework/system/int/sys_int_mapping.h  \
+ ../../../../framework/system/tmr/sys_tmr.h  \
  ../../../../framework/driver/tmr/drv_tmr.h  \
  ../../../../framework/driver/driver_common.h  \
  ../../../../framework/peripheral/tmr/plib_tmr.h  \

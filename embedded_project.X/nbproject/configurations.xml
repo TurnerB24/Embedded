@@ -19,21 +19,12 @@
             <itemPath>../src/system_config/default/system_definitions.h</itemPath>
           </logicalFolder>
         </logicalFolder>
-        <itemPath>../src/appMS1.h</itemPath>
         <itemPath>../src/appms1_public.h</itemPath>
+        <itemPath>../src/appMS1.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f1" displayName="framework" projectFiles="true">
         <logicalFolder name="f1" displayName="driver" projectFiles="true">
-          <logicalFolder name="f1" displayName="tmr" projectFiles="true">
-            <logicalFolder name="f1" displayName="src" projectFiles="true">
-              <itemPath>../../../../framework/driver/tmr/src/drv_tmr_variant_mapping.h</itemPath>
-              <itemPath>../../../../framework/driver/tmr/src/drv_tmr_local.h</itemPath>
-            </logicalFolder>
-            <itemPath>../../../../framework/driver/tmr/drv_tmr.h</itemPath>
-            <itemPath>../../../../framework/driver/tmr/drv_tmr_mapping.h</itemPath>
-            <itemPath>../../../../framework/driver/tmr/drv_tmr_compatibility.h</itemPath>
-          </logicalFolder>
-          <logicalFolder name="f2" displayName="usart" projectFiles="true">
+          <logicalFolder name="f1" displayName="usart" projectFiles="true">
             <logicalFolder name="f1" displayName="src" projectFiles="true">
               <itemPath>../../../../framework/driver/usart/src/drv_usart_local.h</itemPath>
               <itemPath>../../../../framework/driver/usart/src/drv_usart_variant_mapping.h</itemPath>
@@ -156,14 +147,7 @@
       </logicalFolder>
       <logicalFolder name="f1" displayName="framework" projectFiles="true">
         <logicalFolder name="f1" displayName="driver" projectFiles="true">
-          <logicalFolder name="f1" displayName="tmr" projectFiles="true">
-            <logicalFolder name="f1" displayName="src" projectFiles="true">
-              <logicalFolder name="f1" displayName="dynamic" projectFiles="true">
-                <itemPath>../../../../framework/driver/tmr/src/dynamic/drv_tmr.c</itemPath>
-              </logicalFolder>
-            </logicalFolder>
-          </logicalFolder>
-          <logicalFolder name="f2" displayName="usart" projectFiles="true">
+          <logicalFolder name="f1" displayName="usart" projectFiles="true">
             <logicalFolder name="f1" displayName="src" projectFiles="true">
               <logicalFolder name="f1" displayName="dynamic" projectFiles="true">
                 <itemPath>../../../../framework/driver/usart/src/dynamic/drv_usart.c</itemPath>
