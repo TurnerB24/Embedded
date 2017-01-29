@@ -2,32 +2,22 @@
 /** Descriptive File Name
 
   @Company
-    Company Name
+ UR MOM (C)
 
   @File Name
-    filename.h
+    debug.h
 
   @Summary
-    Brief description of the file.
+ * Declares constants for debugging via logic analyzer
 
   @Description
     Describe the purpose of this file.
  */
 /* ************************************************************************** */
 
-#ifndef _APPMS1_PUBLIC_H    /* Guard against multiple inclusion */
-#define _APPMS1_PUBLIC_H
+#ifndef _DEBUG_H    /* Guard against multiple inclusion */
+#define _DEBUG_H
 
-
-/* ************************************************************************** */
-/* ************************************************************************** */
-/* Section: Included Files                                                    */
-/* ************************************************************************** */
-/* ************************************************************************** */
-
-/* This section lists the other files that are included in this file.
- */
-#include "appMS1.h"
 
 /* Provide C++ Compatibility */
 #ifdef __cplusplus
@@ -35,6 +25,7 @@ extern "C" {
 #endif
 
 
+ 
     // *****************************************************************************
     // *****************************************************************************
     // Section: Interface Functions
@@ -89,16 +80,17 @@ extern "C" {
             return 3;
         }
      */
-    void appms1_send_int_to_queue_blocking(appms1qtype* param1);
-    BaseType_t appms1_send_int_to_queue_noblock(appms1qtype* param1);
-
-
+    void dbgOutputVal(unsigned char outVal);
+    void dbgUARTVal(unsigned char outVal);
+    
+    void dbgOutputLoc(unsigned char outVal); //define unique constants for this one
+    
     /* Provide C++ Compatibility */
 #ifdef __cplusplus
 }
 #endif
 
-#endif /* _APPMS1_PUBLIC_H */
+#endif /* _DEBUG_H */
 
 /* *****************************************************************************
  End of File

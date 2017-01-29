@@ -116,7 +116,7 @@ void APPMS1_Initialize ( void )
     /* Place the App state machine in its initial state. */
     appms1Data.state = APPMS1_STATE_INIT;
     
-    appms1Data.int_queue_handle = xQueueCreate(1, sizeof(int)); //creates a queue that holds one integer
+    appms1Data.val_queue_handle = xQueueCreate(1, sizeof(appms1qtype)); //creates a queue that holds one integer
     
 }
 
@@ -131,7 +131,11 @@ void APPMS1_Initialize ( void )
 
 void APPMS1_Tasks ( void )
 {
-
+    while(1){
+        APPMS1_serviceTasks();
+    }
+#if 0   //ignore state machine for now 
+    
     /* Check the application's current state. */
     switch ( appms1Data.state )
     {
@@ -165,22 +169,30 @@ void APPMS1_Tasks ( void )
             break;
         }
     }
+#endif
 }
 
 void APPMS1_serviceTasks(){
-    int recv;
-    xQueueReceive(appms1Data.int_queue_handle, &recv, portMAX_DELAY);
+    appms1qtype recv;
+    xQueueReceive(appms1Data.val_queue_handle, &recv, portMAX_DELAY);
     
     //do stuff
     //--------
     //output to UART and to 8-bit I/O for logic analyzer
     
+    dbgOutputVal(recv); //to I/O lines
+    dbgUARTVal(recv);   //to UART (duh)
+    
 }
 
-void appms1_send_int_to_queue(int* param1){ //blocking
-    xQueueSend(appms1Data.int_queue_handle, param1, portMAX_DELAY);
+void appms1_send_val_to_queue_blocking(appms1qtype* param1){ //blocks if queue is full
+    xQueueSend(appms1Data.val_queue_handle, param1, portMAX_DELAY);
     return;
 }
+
+BaseType_t appms1_send_val_to_queue_noblock(appms1qtype* param1){ //returns error if queue is full
+    return xQueueSendFromISR(appms1Data.val_queue_handle, param1, NULL);
+ }
 
 /*******************************************************************************
  End of File

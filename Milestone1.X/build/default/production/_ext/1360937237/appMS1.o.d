@@ -127,5 +127,4 @@ build/default/production/_ext/1360937237/appMS1.o:  \
  ../../../../../../../../microchip/harmony/v1_09/third_party/rtos/FreeRTOS/Source/include/list.h  \
  ../src/appms1.h  \
  ../../../../../../../../microchip/harmony/v1_09/third_party/rtos/FreeRTOS/Source/include/queue.h  \
- ../src/appms1_public.h  \
-../src/appMS1.h 
+ ../src/debug.h 
