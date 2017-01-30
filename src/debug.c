@@ -55,6 +55,22 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
   Remarks:
     Function that puts an 8-bit value on GPIO pins 46 to 53 on J8
  */ 
+
+void dbgInit()
+{
+    //port E -> output
+    SYS_PORTS_PinDirectionSelect(PORTS_ID_0, SYS_PORTS_DIRECTION_OUTPUT, PORT_CHANNEL_E, PORTS_BIT_POS_0);
+    SYS_PORTS_PinDirectionSelect(PORTS_ID_0, SYS_PORTS_DIRECTION_OUTPUT, PORT_CHANNEL_E, PORTS_BIT_POS_1);
+    SYS_PORTS_PinDirectionSelect(PORTS_ID_0, SYS_PORTS_DIRECTION_OUTPUT, PORT_CHANNEL_E, PORTS_BIT_POS_2);
+    SYS_PORTS_PinDirectionSelect(PORTS_ID_0, SYS_PORTS_DIRECTION_OUTPUT, PORT_CHANNEL_E, PORTS_BIT_POS_3);
+    SYS_PORTS_PinDirectionSelect(PORTS_ID_0, SYS_PORTS_DIRECTION_OUTPUT, PORT_CHANNEL_E, PORTS_BIT_POS_4);
+    SYS_PORTS_PinDirectionSelect(PORTS_ID_0, SYS_PORTS_DIRECTION_OUTPUT, PORT_CHANNEL_E, PORTS_BIT_POS_5);
+    SYS_PORTS_PinDirectionSelect(PORTS_ID_0, SYS_PORTS_DIRECTION_OUTPUT, PORT_CHANNEL_E, PORTS_BIT_POS_6);
+    SYS_PORTS_PinDirectionSelect(PORTS_ID_0, SYS_PORTS_DIRECTION_OUTPUT, PORT_CHANNEL_E, PORTS_BIT_POS_7);
+
+    
+}
+
 void dbgOutputVal(unsigned char outVal)
 {    
     // Sets pins F-1, D-6, D-8, D-11, G-7, G-8, G-6, G-9
@@ -77,17 +93,19 @@ void dbgOutputVal(unsigned char outVal)
  */ 
 void dbgOutputLoc(unsigned char outVal)
 {
-    TRISESET = 0x0;
-    PORTESET = 0xFF;
     // this reads the current value from Port E
-    //uint32_t port_e = SYS_PORTS_Read(PORTS_ID_0, PORT_CHANNEL_E);
-    
+    uint32_t port_e = SYS_PORTS_Read(PORTS_ID_0, PORT_CHANNEL_E);
+
+    //clear the port before we write (easier debugging)
+    port_e = DLOC_CLR | (port_e & 0xFFFFFF00);
+    SYS_PORTS_Write(PORTS_ID_0, PORT_CHANNEL_E, port_e);    
+
     // this sets the lower 8 bits of Port E to the value being passed in
     // pins 30-37 on the Pic32. 0 = 37 and 7 = 30.
-    //port_e = outVal | (port_e & 0xFFFFFF00);
+    port_e = outVal | (port_e & 0xFFFFFF00);
     
     // this writes the new value of port E to port E
-    //SYS_PORTS_Write(PORTS_ID_0, PORT_CHANNEL_E, port_e);    
+    SYS_PORTS_Write(PORTS_ID_0, PORT_CHANNEL_E, port_e);    
 }
 
 /*******************************************************************************

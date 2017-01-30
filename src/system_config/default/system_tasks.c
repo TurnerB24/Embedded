@@ -135,6 +135,9 @@ static void _SYS_Tasks ( void)
 
 static void _APPMS1_Tasks(void)
 {
+    dbgOutputLoc(DLOC_APPMS1_ENTER);
+
+    dbgOutputLoc(DLOC_APPMS1_BEFWHI);
     while(1)
     {
         APPMS1_Tasks();

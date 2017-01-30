@@ -130,11 +130,8 @@ void APPMS1_Initialize ( void )
 
 void APPMS1_Tasks ( void )
 {
-    dbgOutputLoc(DLOC_TASK_ENTER);
-    dbgOutputLoc(DLOC_TASK_BEFORE_WHILE);
-    while(1){
-        APPMS1_serviceTasks();
-    }
+    APPMS1_serviceTasks();
+
 #if 0   //ignore state machine for now 
     
     /* Check the application's current state. */
@@ -176,15 +173,17 @@ void APPMS1_Tasks ( void )
 void APPMS1_serviceTasks(){
     
     appms1qtype recv;
+    dbgOutputLoc(DLOC_APPMS1_BEFREC);
     xQueueReceive(appms1Data.val_queue_handle, &recv, portMAX_DELAY);
-    dbgOutputLoc(DLOC_TASK_AFTER_QRECIEVE);
+    dbgOutputLoc(DLOC_APPMS1_AFTREC);
     //do stuff
     //--------
     //output to UART and to 8-bit I/O for logic analyzer
     
+    dbgOutputLoc(DLOC_APPMS1_BEFSND);
     dbgOutputVal(recv); //to I/O lines
     dbgUARTVal(recv);   //to UART (duh)
-    
+    dbgOutputLoc(DLOC_APPMS1_AFTSND);
 }
 
 void appms1_send_val_to_queue_block(appms1qtype* param1){ //blocks if queue is full

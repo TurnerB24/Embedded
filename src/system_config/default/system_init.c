@@ -181,6 +181,8 @@ const SYS_DEVCON_INIT sysDevconInit =
 
 void SYS_Initialize ( void* data )
 {
+    dbgInit();
+    
     /* Core Processor Initialization */
     SYS_CLK_Initialize( NULL );
     sysObj.sysDevcon = SYS_DEVCON_Initialize(SYS_DEVCON_INDEX_0, (SYS_MODULE_INIT*)&sysDevconInit);

@@ -69,9 +69,20 @@ extern "C" {
 // Unique constant values pushed to GPIO pins 30-37 through the dbgOutputLoc()
 // function. 
 
-#define DLOC_ERROR -1
+#define DLOC_ERROR          -1
+#define DLOC_CLR            0 
     
-// Task debugging values
+#define DLOC_MAIN_ENTER     1
+#define DLOC_INIT_DONE      2
+
+#define DLOC_APPMS1_ENTER   10
+#define DLOC_APPMS1_BEFWHI  11
+#define DLOC_APPMS1_BEFREC  12
+#define DLOC_APPMS1_AFTREC  13
+#define DLOC_APPMS1_BEFSND  14
+#define DLOC_APPMS1_AFTSND  15
+    
+/*// Task debugging values
 #define DLOC_TASK_ENTER 1
 #define DLOC_TASK_BEFORE_WHILE 2
 #define DLOC_TASK_BEFORE_QSEND 3
@@ -82,6 +93,7 @@ extern "C" {
 #define DLOC_ISR_EXIT 6
 #define DLOC_ISR_BEFORE_QSEND 7
 #define DLOC_ISR_AFTER_QRECIEVE 8
+  */
     
 // *****************************************************************************
 // *****************************************************************************
@@ -103,6 +115,9 @@ extern "C" {
 // Section: Application Initialization and State Machine Functions
 // *****************************************************************************
 // ***************************************************************************** 
+    
+    
+void dbgInit();
     
 /*******************************************************************************
   Function:
