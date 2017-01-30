@@ -67,10 +67,10 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 
 /*** DEVCFG1 ***/
 
-#pragma config FNOSC =      FRCPLL
+#pragma config FNOSC =      PRIPLL
 #pragma config FSOSCEN =    OFF
 #pragma config IESO =       OFF
-#pragma config POSCMOD =    OFF
+#pragma config POSCMOD =    XT
 #pragma config OSCIOFNC =   OFF
 #pragma config FPBDIV =     DIV_1
 #pragma config FCKSM =      CSDCMD
@@ -82,12 +82,12 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 #pragma config FPLLMUL =    MUL_24
 #pragma config FPLLODIV =   DIV_2
 #pragma config UPLLIDIV =   DIV_2
-#pragma config UPLLEN =     OFF
+#pragma config UPLLEN =     ON
 /*** DEVCFG3 ***/
 
 #pragma config USERID =     0xffff
 #pragma config FSRSSEL =    PRIORITY_7
-#pragma config FMIIEN =     ON
+#pragma config FMIIEN =     OFF
 #pragma config FETHIO =     ON
 #pragma config FCANIO =     ON
 #pragma config FUSBIDIO =   ON
@@ -180,15 +180,15 @@ const SYS_DEVCON_INIT sysDevconInit =
  */
 
 void SYS_Initialize ( void* data )
-{
-    dbgInit();
-    
+{    
     /* Core Processor Initialization */
     SYS_CLK_Initialize( NULL );
     sysObj.sysDevcon = SYS_DEVCON_Initialize(SYS_DEVCON_INDEX_0, (SYS_MODULE_INIT*)&sysDevconInit);
     SYS_DEVCON_PerformanceConfig(SYS_CLK_SystemFrequencyGet());
-    SYS_DEVCON_JTAGDisable();
+    SYS_DEVCON_JTAGEnable();
     SYS_PORTS_Initialize();
+    /* Board Support Package Initialization */
+    BSP_Initialize();        
 
     /* Initialize Drivers */
     /*Initialize TMR0 */
